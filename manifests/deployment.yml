@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: coitfrontendimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coitfrontendimage
+  template:
+    metadata:
+      labels:
+        app: coitfrontendimage 
+    spec:
+      containers:
+        - name: coitfrontendimage 
+          image: firstcr1.azurecr.io/coitfrontendimage
+          ports:
+          - containerPort: 8080
